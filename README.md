@@ -1,129 +1,177 @@
-🌐 FlowAI
-The Next-Generation Full-Stack Starter Kit for Builders, Innovators, and AI-Driven Web Products
+# FlowAI
+Developer-Focused Full-Stack Starter Kit  
+Next.js 14 (App Router) • Tailwind CSS 4 • shadcn/ui • Prisma • Custom Server • WebSockets
 
-FlowAI is a cutting-edge full-stack starter kit engineered for developers who want to build modern, lightning-fast, and visually stunning applications without wasting hours on setup.
-Powered by Next.js, styled with the ultra-modern Tailwind CSS 4, enhanced with shadcn/ui, and backed by the reliability of Prisma ORM, FlowAI gives you everything you need to ship production-ready features—from day one.
+---
 
-Whether you're building an AI platform, a dynamic dashboard, a blockchain-enabled DApp, or a full-scale SaaS product, FlowAI provides the perfect foundation.
+## Overview
+FlowAI is a full-stack starter kit designed for developers who want a modern, scalable, and flexible foundation. It combines a custom Node.js server with a Next.js frontend, giving you full control over routing, middleware, WebSockets, and advanced runtime behavior.
 
-✨ Why FlowAI Stands Out
-🚀 Zero to Production—Faster Than Ever
+This project is ideal for building production-grade platforms such as real-time dashboards, AI-driven interfaces, SaaS products, and Web3-enabled applications.
 
-FlowAI removes the typical friction of setting up a modern web stack.
-You get a streamlined environment with preconfigured tools, scalable architecture, and battle-tested patterns.
+---
 
-🎨 Beautiful by Default
+## Features
 
-With Tailwind CSS 4 and shadcn/ui, FlowAI comes with a refined UI/UX toolkit—powerful enough for enterprise apps, elegant enough for consumer-grade interfaces.
+### Backend
+- Custom server (server.ts)
+- WebSocket-ready
+- Extendable routing
+- Can integrate background workers or microservices
 
-🧠 AI-Ready Architecture
+### Frontend
+- Next.js App Router
+- React 19
+- Tailwind CSS 4
+- shadcn/ui
+- Zustand for client state
 
-Designed with AI workloads in mind—real-time interactions, vector DB integration, and model orchestration can be layered on easily.
+### Database
+- Prisma ORM
+- Fully typed database models
+- Migration-ready
+- Compatible with PostgreSQL, MySQL, SQLite, etc.
 
-🔌 WebSocket & Realtime Included
+### Developer Experience
+- 100% TypeScript
+- Hot reload with tsx + nodemon
+- Clean folder structure
+- Minimal but scalable architecture
 
-Skip the setup—FlowAI includes a ready-to-use WebSocket example so you can build realtime dashboards, live metrics, and reactive interfaces effortlessly.
+---
 
-🛡️ Type-Safe, Scalable, Reliable
+## Project Structure (Short Version)
 
-Every layer—from API routes to database queries—is fully typed with TypeScript.
-FlowAI uses Prisma for data consistency and future-proof schema migrations.
+```
+src/
+  app/               # Next.js routes
+  components/        # UI components
+  hooks/             # Custom React hooks
+  lib/               # Utilities & WebSocket client
+  store/             # Zustand state
+  styles/            # Global styles
 
-🧱 Custom Server Power
+prisma/
+  schema.prisma       # Database schema
 
-Unlike typical Next.js projects, FlowAI includes a custom server (server.ts) giving you:
+public/
+  images/             # Assets (coins, logos, networks)
 
-fine-grained request control
+server.ts             # Custom Node.js server
+examples/
+  websocket/          # WebSocket demo
+```
 
-advanced routing logic
+---
 
-middleware injection
+## Architecture
 
-full WebSocket flexibility
+### Application Runtime
+FlowAI uses a custom entrypoint (`server.ts`) to control:
+- HTTP request routing
+- Middleware injection
+- Custom runtime logic
+- WebSocket communication
+- Advanced integration beyond default Next.js server
 
-future compatibility with microservices or multi-runtime environments
+This gives you backend freedom while maintaining Next.js capabilities.
 
-🏗️ Technology You Can Trust
+### Frontend Architecture
+```
+src/app        - Routes & pages  
+src/components - Global, UI, icons, toast components  
+src/hooks      - Cross-component logic  
+src/store      - Zustand global store  
+src/lib        - Utilities & WebSocket client  
+src/styles     - Global CSS  
+```
 
-FlowAI brings together the most powerful tools of the modern JavaScript ecosystem:
+### Backend Architecture
+The backend starts from `server.ts`:
+- Bootstraps custom Node server
+- Binds Next.js request handler
+- Injects WebSocket server
+- Provides a foundation for future modular APIs, services, or queues
 
-Layer	Technology
-Frontend	Next.js, React 19, Tailwind CSS 4, shadcn/ui
-State	Zustand
-Backend	Custom Node.js server (TSX), WebSockets
-Database	Prisma ORM
-Blockchain	Viem (Metamask, Phantom-ready)
-Language	100% TypeScript
-Dev Tools	Nodemon, TSX, ESLint
+### Database Layer (Prisma)
+Prisma schema located at:
+```
+prisma/schema.prisma
+```
 
-Together, they create a development experience that is fast, reliable, and incredibly enjoyable.
+---
 
-🗂️ Project Structure
-.
-├── src/                        # Main application logic
-├── public/                     # Static assets & branding
-├── prisma/
-│   └── schema.prisma           # Centralized database schema
-├── examples/
-│   └── websocket/              # Realtime example implementation
-├── server.ts                   # Custom server entrypoint
-├── next.config.ts
-├── tailwind.config.ts
-└── package.json
+## Getting Started
 
-
-This structure is optimized for scalability—meaning it grows with your project, not against it.
-
-🚀 Installation & Quick Start
-1. Install dependencies
+Install dependencies:
+```
 npm install
+```
 
-2. Sync your Prisma schema
+Push Prisma schema:
+```
 npm run db:push
+```
 
-3. Launch in development mode
+Start development:
+```
 npm run dev
+```
 
-
-FlowAI uses nodemon + tsx to provide lightning-fast reloads—even when modifying the backend.
-
-4. Create production build
+Build for production:
+```
 npm run build
+```
 
-5. Start production server
+Start production:
+```
 npm start
+```
 
+---
 
-You're now running a fully optimized Next.js + custom server hybrid environment.
+## Scripts
 
-🧩 Available Scripts
-Script	Purpose
-dev	Start custom server with hot reloading
-build	Compile application for production
-start	Launch production server
-db:push	Sync Prisma schema to database
-db:migrate	Generate database migrations
-db:reset	Reset and reseed database
-🔮 A Foundation for Everything You Want to Build
+| Script         | Description                           |
+|----------------|---------------------------------------|
+| dev            | Start development server              |
+| build          | Build Next.js for production          |
+| start          | Run production server                 |
+| db:push        | Sync schema to database               |
+| db:migrate     | Create migration files                |
+| db:reset       | Reset and reseed database             |
 
-FlowAI is designed for creators who build:
+---
 
-✨ SaaS platforms
-✨ AI assistants & agent dashboards
-✨ Real-time data applications
-✨ DApps with wallet integration
-✨ Internal tools & enterprise dashboards
-✨ Multi-tenant platforms
-✨ Modern full-stack products
+## WebSocket Example
 
-If your idea needs speed, reliability, and beauty—FlowAI is the perfect starting point.
+A complete WebSocket sample is available at:
 
-🤝 Contributing
+```
+src/app/examples/websocket/page.tsx
+```
 
-Contributions are welcome!
-If you find bugs, have suggestions, or want to expand FlowAI, feel free to submit a PR or open an issue.
+This includes:
+- Connection handling
+- Message listening
+- Sending payloads
+- UI updates with Zustand
 
-📄 License
+---
 
-Choose the license that best fits your project (MIT recommended).
-If you'd like, I can generate the full MIT, Apache, or AGPL license file for you.
+## Recommended Use Cases
+
+FlowAI is suitable for:
+- AI dashboards  
+- Realtime monitoring systems  
+- SaaS platforms  
+- Multi-tenant apps  
+- WebSocket-powered interfaces  
+- Web3-enabled apps  
+- Internal enterprise tools  
+
+---
+
+## License
+
+Add your preferred license here (MIT recommended).
