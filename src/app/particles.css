@@ -1,0 +1,68 @@
+/* 🌌 Flow AI Particle Background */
+.particle-bg {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: radial-gradient(circle, #a855f7, transparent);
+  border-radius: 50%;
+  animation: moveParticle 12s infinite ease-in-out alternate;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.particle-bg:nth-child(1) {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.particle-bg:nth-child(2) {
+  top: 50%;
+  left: 60%;
+  animation-delay: 2s;
+}
+
+.particle-bg:nth-child(3) {
+  top: 80%;
+  left: 30%;
+  animation-delay: 4s;
+}
+
+@keyframes moveParticle {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(50px, -100px) scale(1.5);
+    opacity: 0.8;
+  }
+}
+
+/* 🌈 Gradient Text Universal */
+h1,
+h2,
+h3,
+.page-title {
+  background: linear-gradient(
+    90deg,
+    #ff00ff,
+    #00ffff,
+    #00ff88,
+    #ffaa00,
+    #ff0077
+  );
+  background-size: 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: flowText 6s linear infinite;
+}
+
+@keyframes flowText {
+  0% {
+    background-position: 0%;
+  }
+  100% {
+    background-position: 300%;
+  }
+}
